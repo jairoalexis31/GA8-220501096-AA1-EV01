@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const formIngresar = document.getElementById('form-ingresar');
     const formModificar = document.getElementById('form-modificar');
