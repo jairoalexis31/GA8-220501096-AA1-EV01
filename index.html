@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSBD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Control de Compras e Inventarios</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#ingresar-mercancia">Ingresar Mercancía</a></li>
+            <li><a href="#visualizar-mercancia">Visualizar Mercancía</a></li>
+            <li><a href="#modificar-mercancia">Modificar Mercancía</a></li>
+            <li><a href="#solicitar-mercancia">Solicitar Mercancía</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="ingresar-mercancia">
+            <h2>Ingresar Mercancía</h2>
+            <form id="form-ingresar">
+                <label for="nombre">Nombre del Producto:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" step="0.01" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
+        <section id="visualizar-mercancia">
+            <h2>Visualizar Mercancía</h2>
+            <div id="lista-mercancia">
+                <!-- Aquí se mostrará la lista de mercancía -->
+            </div>
+        </section>
+        <section id="modificar-mercancia">
+            <h2>Modificar Mercancía</h2>
+            <form id="form-modificar">
+                <label for="id-modificar">ID del Producto:</label>
+                <input type="text" id="id-modificar" name="id-modificar" required>
+                <label for="nuevo-nombre">Nuevo Nombre:</label>
+                <input type="text" id="nuevo-nombre" name="nuevo-nombre">
+                <label for="nueva-cantidad">Nueva Cantidad:</label>
+                <input type="number" id="nueva-cantidad" name="nueva-cantidad">
+                <label for="nuevo-precio">Nuevo Precio:</label>
+                <input type="number" id="nuevo-precio" name="nuevo-precio" step="0.01">
+                <button type="submit">Modificar</button>
+            </form>
+        </section>
+        <section id="solicitar-mercancia">
+            <h2>Solicitar Mercancía</h2>
+            <form id="form-solicitar">
+                <label for="id-solicitar">ID del Producto:</label>
+                <input type="text" id="id-solicitar" name="id-solicitar" required>
+                <label for="cantidad-solicitar">Cantidad:</label>
+                <input type="number" id="cantidad-solicitar" name="cantidad-solicitar" required>
+                <button type="submit">Solicitar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Sistema de Control de Compras e Inventarios</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
