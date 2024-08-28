@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let mercancia = [];
 
+    // Función para ingresar un nuevo producto
     formIngresar.addEventListener('submit', (e) => {
         e.preventDefault();
         const nombre = document.getElementById('nombre').value;
@@ -19,14 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
         formIngresar.reset();
     });
 
+    // Función para modificar un producto existente
     formModificar.addEventListener('submit', (e) => {
         e.preventDefault();
-        const idModificar = document.getElementById('id-modificar').value;
+        const idModificar = parseInt(document.getElementById('id-modificar').value);
         const nuevoNombre = document.getElementById('nuevo-nombre').value;
         const nuevaCantidad = document.getElementById('nueva-cantidad').value;
         const nuevoPrecio = document.getElementById('nuevo-precio').value;
 
-        const producto = mercancia.find(item => item.id == idModificar);
+        const producto = mercancia.find(item => item.id === idModificar);
         if (producto) {
             if (nuevoNombre) producto.nombre = nuevoNombre;
             if (nuevaCantidad) producto.cantidad = nuevaCantidad;
@@ -38,14 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Función para solicitar más cantidad de un producto
     formSolicitar.addEventListener('submit', (e) => {
         e.preventDefault();
-        const idSolicitar = document.getElementById('id-solicitar').value;
-        const cantidadSolicitar = document.getElementById('cantidad-solicitar').value;
+        const idSolicitar = parseInt(document.getElementById('id-solicitar').value);
+        const cantidadSolicitar = parseInt(document.getElementById('cantidad-solicitar').value);
 
-        const producto = mercancia.find(item => item.id == idSolicitar);
+        const producto = mercancia.find(item => item.id === idSolicitar);
         if (producto) {
-            producto.cantidad = parseInt(producto.cantidad) + parseInt(cantidadSolicitar);
+            producto.cantidad = parseInt(producto.cantidad) + cantidadSolicitar;
             actualizarLista();
             formSolicitar.reset();
         } else {
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Función para actualizar la lista de productos mostrada
     function actualizarLista() {
         listaMercancia.innerHTML = '';
         mercancia.forEach(item => {
